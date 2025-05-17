@@ -20,6 +20,7 @@ namespace Application.Services
                     EventDescription = request.EventDescription,
                     EventDate = request.EventDate,
                     EventLocation = request.EventLocation,
+                    EventCategory = request.EventCategory,
                 };
                 var result = await _eventRepository.AddAsync(eventEntity);
                 return result.Success
@@ -43,6 +44,7 @@ namespace Application.Services
                 EventDescription = x.EventDescription,
                 EventDate = x.EventDate,
                 EventLocation = x.EventLocation,
+                EventCategory = x.EventCategory,
             });
 
             return new EventResult<IEnumerable<Event>> { Success = true, Result = events };
@@ -61,6 +63,7 @@ namespace Application.Services
                     EventDescription = result.Result.EventDescription,
                     EventDate = result.Result.EventDate,
                     EventLocation = result.Result.EventLocation,
+                    EventCategory = result.Result.EventCategory,
                 };
 
                 return new EventResult<Event?> { Success = true, Result = currentEvent };
