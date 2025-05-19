@@ -52,7 +52,7 @@ namespace Persistence.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Events");
+                    b.ToTable("Events", (string)null);
                 });
 
             modelBuilder.Entity("Persistence.Entities.EventPackageEntity", b =>
@@ -73,7 +73,7 @@ namespace Persistence.Migrations
 
                     b.HasIndex("PackageId");
 
-                    b.ToTable("EventPackages");
+                    b.ToTable("EventPackages", (string)null);
                 });
 
             modelBuilder.Entity("Persistence.Entities.PackageEntity", b =>
@@ -102,7 +102,7 @@ namespace Persistence.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Packages");
+                    b.ToTable("Packages", (string)null);
                 });
 
             modelBuilder.Entity("Persistence.Entities.EventPackageEntity", b =>

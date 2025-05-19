@@ -17,7 +17,7 @@ namespace Presentation.Controllers
             return Ok(events);
         }
 
-        [HttpGet("{eventId}")]
+        [HttpGet("{id}")]
         public async Task<IActionResult> Get(string Id)
         {
             var currentEvent = await _eventService.GetEventAsync(Id);
