@@ -15,7 +15,7 @@ namespace Persistence.Repositories
         {
             try
             {
-                var entities = await _table.Include(x => x.Packages).ToListAsync();
+                var entities = await _table.ToListAsync();
                 return new RepositoryResult<IEnumerable<EventEntity>>
                 {
                     Success = true,
@@ -38,7 +38,7 @@ namespace Persistence.Repositories
         {
             try
             {
-                var entity = await _table.Include(x => x.Packages).FirstOrDefaultAsync(expression);
+                var entity = await _table.FirstOrDefaultAsync(expression);
                 return new RepositoryResult<EventEntity?> { Success = true, Result = entity };
             }
             catch (Exception ex)

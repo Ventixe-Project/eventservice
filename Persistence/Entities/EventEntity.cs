@@ -15,6 +15,5 @@ namespace Persistence.Entities
         public DateTime EventDate { get; set; }
         public string EventImage { get; set; } = null!;
         public string EventCategory { get; set; } = null!;
-        public ICollection<EventPackageEntity> Packages { get; set; } = [];
     }
 }
